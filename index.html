@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrisWar</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- jQuery Script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    
+</head>
+
+<body>
+
+    <!-- Login -->
+    <section id="section-di-accesso">
+        <div id="contenitore-logo">
+            <img src="img/logo.png" id="logo" alt="logo di TrisWar" title="Triswar">
+            <div>
+                <input type="text" name="username" placeholder="Scrivi il tuo username" id="username">
+                <button  type="button" id="accediBtn">ACCEDI</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Il gioco -->
+    <section id="section-di-gioco">
+
+    </section>
+
+
+    <img id="imgX" src=img/x.png>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+    <!-- Fire Base -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBZsoMI37Ihklhg-sJdeAq_Rrs5IeP59jo",
+    authDomain: "triswars-57aa4.firebaseapp.com",
+    databaseURL: "https://triswars-57aa4-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "triswars-57aa4",
+    storageBucket: "triswars-57aa4.appspot.com",
+    messagingSenderId: "597311962640",
+    appId: "1:597311962640:web:c59577ac1101cc38b15495"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+        import {getDatabase,ref,set,child,update,remove}
+        from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+        const db = getDatabase();
+        // Ref
+        document.getElementById("accediBtn").addEventListener("click", setData());
+        function setData(){
+            set(ref(db,"Users"),{
+                id:0,
+                name:"ciao1"
+            });
+        }
+
+
+      </script> 
+      <script src="js/trisDB.js"></script>  
+</body>
+
+</html>
