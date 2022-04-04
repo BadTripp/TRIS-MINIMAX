@@ -16,7 +16,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 306px;
-    margin: 50px auto;
+    margin: 10px auto;
     background-color: #11213a;
     color: #04c0b2;
 }
@@ -35,7 +35,7 @@ section {
 .game--status {
     font-size: 50px;
     color: #444e40;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .game--restart {

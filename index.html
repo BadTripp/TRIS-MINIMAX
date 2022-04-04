@@ -48,23 +48,24 @@
 
     <!-- Il gioco -->
     <section id="section-di-gioco">
-      <img src=img/logo.png>
-      <h2 id="user"></h2>
-      <p id="labelTurni">Turno del Giocatore:</p>
-      <div class="game--container">
-          <div onclick="playerClick(0);"id="0" data-cell-index="0" class="cell"></div>
-          <div onclick="playerClick(1);"id="1"data-cell-index="1" class="cell"></div>
-          <div onclick="playerClick(2);"id="2"data-cell-index="2" class="cell"></div>
-          <div onclick="playerClick(3);"id="3"data-cell-index="3" class="cell"></div>
-          <div onclick="playerClick(4);"id="4"data-cell-index="4" class="cell"></div>
-          <div onclick="playerClick(5);"id="5"data-cell-index="5" class="cell"></div>
-          <div onclick="playerClick(6);"id="6"data-cell-index="6" class="cell"></div>
-          <div onclick="playerClick(7);"id="7"data-cell-index="7" class="cell"></div>
-          <div onclick="playerClick(8);"id="8"data-cell-index="8" class="cell"></div>
-      </div>
-      <h2 class="game--status"></h2>
-      <button class="game--restart" id="restartBtn">Restart Game</button>
-      <script src="./js/tris.js"></script>
+        <img src=img/logo.png>
+        <h2 id="user"></h2>
+        <p id="labelTurni">Turno del Giocatore:</p>
+        <div class="game--container">
+            <div onclick="playerClick(0);"id="0" data-cell-index="0" class="cell"></div>
+            <div onclick="playerClick(1);"id="1"data-cell-index="1" class="cell"></div>
+            <div onclick="playerClick(2);"id="2"data-cell-index="2" class="cell"></div>
+            <div onclick="playerClick(3);"id="3"data-cell-index="3" class="cell"></div>
+            <div onclick="playerClick(4);"id="4"data-cell-index="4" class="cell"></div>
+            <div onclick="playerClick(5);"id="5"data-cell-index="5" class="cell"></div>
+            <div onclick="playerClick(6);"id="6"data-cell-index="6" class="cell"></div>
+            <div onclick="playerClick(7);"id="7"data-cell-index="7" class="cell"></div>
+            <div onclick="playerClick(8);"id="8"data-cell-index="8" class="cell"></div>
+        </div>
+        <h2 class="game--status"></h2>
+        <button class="game--restart" id="restartBtn">Restart Game</button>
+        <button class="game--restart" id="logoutBtn">Logout</button>
+        <script src="./js/tris.js"></script>
     </section>
 
     <img id="imgX" src=img/x.png>
@@ -114,6 +115,7 @@
           (colIdx == 3) ? "green" : null;
 
         sessionStorage.setItem("colore", color);
+        
 
         /*FINE creazione di associazione randomica del colore*/
         set(ref(db, "Users/" + uID), {

@@ -88,7 +88,7 @@ const checkWin = (table, player) =>
 // Cambio turno fra players
 function playerClick(cell) {
   document.getElementById("labelTurni").innerText =
-    color + "Turno del Giocatore:"; //Cambio label turni
+    "Turno del Giocatore:"; //Cambio label turni
 
   table[cell] = 1;
 

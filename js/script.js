@@ -21,6 +21,7 @@ $(document).ready(function () {
         left: randW - 50,
         top: randH - 50,
         visibility: "visible",
+        zindex: -1,
       })
       .appendTo("body");
   }
