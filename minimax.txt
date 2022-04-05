@@ -1,0 +1,28 @@
+// for (let i = 0; i <= 8; i++) {
+  //   clone[1][i] = table[1][i];
+  //   clone[2][i] = table[2][i];
+  // }
+
+  // for (let j = 0; j <= 8; j++) {
+  //   if (clone[giocatore][j] == 0 && clone[2][j] == 0) {
+  //     clone[giocatore][j] = 1;
+  //     if (checkWin(clone)) {
+  //       val[giocatore] = 1;
+  //     } else {
+  //       for (let i = 0; i <= 8; i++) {
+  //         if (clone[giocatore][i] == 0 && clone[2][i] == 0) {
+  //           clone[giocatore][i] = 1;
+  //           if (checkWin(clone)) {
+  //             val[giocatore] = 2;
+  //           }
+  //         } else {
+  //           continue;
+  //         }
+  //         clone[giocatore][i] = 0;
+  //       }
+  //     }
+  //   }
+  //   clone[giocatore][j] = 0;
+  //   console.log("");
+  // }
+  // console.log("Giocatore " + giocatore + " vince in mosse" + val[giocatore]);
