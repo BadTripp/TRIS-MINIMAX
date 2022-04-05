@@ -33,7 +33,7 @@ document.body.style.backgroundColor = color;
 
 function playerWin() {
   document.getElementById("labelTurni").innerText =
-    "Vincitore Giocatore:" + turn;
+    "Vincitore Giocatore:" ;
 }
 
 const indexCheck = (table, player, index) => table[index] == player;
@@ -88,8 +88,8 @@ const checkWin = (table, player) =>
 // Cambio turno fra players
 function playerClick(cell) {
   document.getElementById("labelTurni").innerText =
-    "Turno del Giocatore:"; //Cambio label turni
-
+    color + "Turno del Giocatore:"; //Cambio label turni
+  console.log(cell)
   table[cell] = 1;
 
   playerOne(cell);
@@ -108,12 +108,12 @@ function playerClick(cell) {
       });
     }
   }
-
+  console.log(moves)
   let bestMove = moves.reduce((a, b) => (a.score > b.score ? a : b), {
     score: -Infinity,
     move: -1,
   });
-
+  console.log(bestMove);
   const { move } = bestMove
 
   table[move] = 2;
@@ -125,27 +125,42 @@ function moveIA(win, color) {
   document.getElementById(win).style.backgroundColor = color;
 }
 
-var player = 1;
-var opponent = 2;
+
+
+var opponent=1;
 
 function IA(table, move, player) {
-  return 1;
+    let clone=[...table];
+    let opponent = (player == 1) ? 2 : 1;
+    let score = 0;
+    for(let i=0;i < 9 ; i++) {
+      
+      if(table[i] == -1) {
+        clone[i] = player;
+
+        if(checkWin(clone,player)){console.log("win"+player); return 1 }
+        if(checkWin(clone,opponent)){console.log("win"+player);return -1}
+        
+        score += IA(clone, i, opponent);
+      }
+    }
+    return score;
 }
 
 function checkSpam(casellaCliccata) {
   for (i = 0; i < numCells; i++) {
-    document.getElementById(casellaCliccata).onclick = "";
+    // document.getElementById(casellaCliccata).onclick = "";
   }
 }
 
 //  Ogni player scrive su una cella e non può ricliccaci se già selezionata
 function playerOne(cell) {
-  checkSpam(cell);
+  
   writeCell(cell, 1);
 }
 
 function playerTwo(cell) {
-  checkSpam(cell);
+  
   writeCell(cell, 2);
 }
 
